@@ -1,30 +1,21 @@
 import React from 'react';
 import axios from 'axios';
+
 const RetrieveData = () => {
   //   const getData = () => {
   axios
     .get(
-      'https://raw.githubusercontent.com/rrafols/mobile_test/master/data.json',
-      { params: { id: 0 } }
+      'https://raw.githubusercontent.com/rrafols/mobile_test/master/data.json'
     )
     .then(function (response) {
-      // handle success
       console.log(response);
+
+      return response;
     })
     .catch(function (error) {
-      // handle error
       console.log(error);
-    })
-    .then(function () {
-      // always executed
+      return 'error';
     });
-  //   };
-
-  //   return (
-  //     <>
-  //       <button onClick={getData}>TESTEANDO</button>
-  //     </>
-  //   );
 };
 
 export default RetrieveData;
