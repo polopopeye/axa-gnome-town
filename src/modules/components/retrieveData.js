@@ -4,7 +4,8 @@ const RetrieveData = () => {
   //   const getData = () => {
   axios
     .get(
-      'https://raw.githubusercontent.com/rrafols/mobile_test/master/data.json'
+      'https://raw.githubusercontent.com/rrafols/mobile_test/master/data.json',
+      { params: { id: 0 } }
     )
     .then(function (response) {
       // handle success
