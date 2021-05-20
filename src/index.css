@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.input-predict-suggestion {
+  left: 0;
+  margin-top: 16px;
+  color: #0000004d;
+  /* font-weight: bold; */
+  margin-left: 15px;
+}
+.input-predict-container {
+  z-index: 99;
+  background: white;
+  border-radius: 0.3em;
+  box-shadow: 1px 1px 10px darkgrey;
+}
