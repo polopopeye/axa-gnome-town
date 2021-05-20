@@ -6,6 +6,12 @@ import {
   setLimits,
   setQuery,
 } from '../../actions';
+import InputPredict from 'react-inline-predict';
+import {
+  generatePredict,
+  predictArrayDict,
+} from '../components/generatePredict';
+
 // import RetrieveData from '../components/retrieveData';
 
 // RetrieveData();
@@ -80,15 +86,21 @@ const Searcher = (props) => {
     }
   };
 
+  generatePredict(Brastlewark);
+
   return (
     <>
       <h1>{resultsPerPage}</h1>
       <h1>{query}</h1>
-      <input
+
+      <InputPredict
         onKeyUp={(event) => handleSetQuery(event.target.value)}
         type="text"
-        placeholder="BUSCAR"
+        name="name"
+        placeholder="Search Gnome"
+        dictionary={predictArrayDict}
       />
+
       <select
         defaultValue={resultsPerPage}
         onChange={(event) => handleSetLimits(event.target.value)}
