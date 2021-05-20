@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import Img from 'react-cool-img';
+
 import { setFavourite, deleteFavourite } from '../../actions';
 import { StarIcon } from '@heroicons/react/solid';
 import { StarIcon as StarIconSolid } from '@heroicons/react/outline';
@@ -63,7 +65,9 @@ const TemplateCard = (props) => {
       {/* BODY */}
       <div class="grid grid-cols-2 transition ease-in-out duration-700">
         <div class="p-4 transition ease-in-out duration-700">
-          <img
+          <Img
+            cache={true}
+            lazy={true}
             class="rounded-lg shadow-lg transition ease-in-out duration-700"
             src={gnome.thumbnail}
             alt={gnome.name}
