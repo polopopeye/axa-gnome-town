@@ -36,6 +36,10 @@ const TemplateCard = (props) => {
   const handleDeleteFavourite = (id) => {
     props.deleteFavourite(id);
   };
+  let gender = 'Female';
+  if (gnome.weight > 39 && gnome.height > 109) {
+    gender = 'Male';
+  }
 
   return (
     <div class="rounded-lg shadow-lg bg-green-100 transition ease-out duration-700">
@@ -74,6 +78,7 @@ const TemplateCard = (props) => {
           />
         </div>
         <div class="p-4 transition ease-in-out duration-700">
+          <div class="col-span-2">Gender: {gender}</div>
           <div class="col-span-2">Weight: {gnome.weight.toFixed(2)} kg</div>
           <div class="col-span-2">Height: {gnome.height.toFixed(2)} cm</div>
           <div class="flex">
