@@ -65,20 +65,20 @@ const Searcher = (props) => {
     }
   };
 
-  //   const orderByName = (mode = 'asc') => {
-  //     if (mode === 'desc') {
-  //       Brastlewark.sort(function (a, b) {
-  //         return parseFloat(b.id) - parseFloat(a.id);
-  //       });
-  //       handleSetQuery();
-  //     }
-  //     if (mode === 'asc') {
-  //       Brastlewark.sort(function (a, b) {
-  //         return parseFloat(a.id) - parseFloat(b.id);
-  //       });
-  //       handleSetQuery();
-  //     }
-  //   };
+  const orderByName = (mode = 'asc') => {
+    if (mode === 'asc') {
+      Brastlewark.sort(function (a, b) {
+        return a.name.localeCompare(b.name);
+      });
+      handleSetQuery();
+    }
+    if (mode === 'desc') {
+      Brastlewark.sort(function (a, b) {
+        return b.name.localeCompare(a.name);
+      });
+      handleSetQuery();
+    }
+  };
 
   return (
     <>
@@ -109,7 +109,8 @@ const Searcher = (props) => {
       <div>
         <button onClick={() => orderByID('asc')}>orderByID ASC</button>
         <button onClick={() => orderByID('desc')}>orderByID DESC</button>
-        <button onClick={() => orderByName('asc')}>Nombre DESC</button>
+        <button onClick={() => orderByName('asc')}>Nombre ASC</button>
+        <button onClick={() => orderByName('desc')}>Nombre DESC</button>
       </div>
       <div>
         <h1>LISTA</h1>
