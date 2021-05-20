@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Searcher from './modules/containers/Searcher';
+// import Searcher from './modules/containers/Searcher';
 import reportWebVitals from './reportWebVitals';
 
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducer from './reducers';
-import data from './data.json';
-
+// import data from './data.json';
+import MainSPA from './modules/containers/MainSPA';
 const initialState = {
   myList: [],
   resultsPerPage: 5,
@@ -21309,7 +21309,8 @@ const store = createStore(reducer, initialState);
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Searcher />
+      {/* <Searcher /> */}
+      <MainSPA />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
