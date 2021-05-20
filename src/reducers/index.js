@@ -24,6 +24,11 @@ const reducer = (state, action) => {
         ...state,
         query: [action.payload],
       };
+    case 'SET_DATA':
+      return {
+        ...state,
+        Brastlewark: action.payload,
+      };
 
     default:
       return state;

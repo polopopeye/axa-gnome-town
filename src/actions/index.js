@@ -17,3 +17,8 @@ export const setQuery = (payload) => ({
   type: 'SET_QUERY',
   payload,
 });
+
+export const setData = (payload) => ({
+  type: 'SET_DATA',
+  payload,
+});
