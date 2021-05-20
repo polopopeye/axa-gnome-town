@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { deleteFavourite } from '../../actions';
+import Img from 'react-cool-img';
+
 import TemplateCard from '../components/TemplateCard';
 
 const FavouriteList = (props) => {
@@ -38,11 +40,13 @@ const FavouriteList = (props) => {
           })
         ) : (
           <div class="col-span-3 text-xl text-center text-bolder grid justify-items-center  text-white mt-8 pb-16">
-            <img
+            <Img
+              cache={true}
+              lazy={true}
               alt="any favorite found"
               class="w-64 m-auto"
               src="https://www.imer.mx/tropicalisima/wp-content/uploads/sites/19/559395_landscape-tumbleweed.gif"
-            ></img>
+            />
             U didn't save any gnome...
           </div>
         )}

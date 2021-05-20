@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import Img from 'react-cool-img';
+
 import { setFavourite, deleteFavourite } from '../../actions';
 import { StarIcon } from '@heroicons/react/solid';
 import { StarIcon as StarIconSolid } from '@heroicons/react/outline';
@@ -34,6 +36,10 @@ const TemplateCard = (props) => {
   const handleDeleteFavourite = (id) => {
     props.deleteFavourite(id);
   };
+  let gender = 'Female';
+  if (gnome.weight > 39 && gnome.height > 109) {
+    gender = 'Male';
+  }
 
   return (
     <div class="rounded-lg shadow-lg bg-green-100 transition ease-out duration-700">
@@ -63,13 +69,16 @@ const TemplateCard = (props) => {
       {/* BODY */}
       <div class="grid grid-cols-2 transition ease-in-out duration-700">
         <div class="p-4 transition ease-in-out duration-700">
-          <img
+          <Img
+            cache={true}
+            lazy={true}
             class="rounded-lg shadow-lg transition ease-in-out duration-700"
             src={gnome.thumbnail}
             alt={gnome.name}
           />
         </div>
         <div class="p-4 transition ease-in-out duration-700">
+          <div class="col-span-2">Gender: {gender}</div>
           <div class="col-span-2">Weight: {gnome.weight.toFixed(2)} kg</div>
           <div class="col-span-2">Height: {gnome.height.toFixed(2)} cm</div>
           <div class="flex">

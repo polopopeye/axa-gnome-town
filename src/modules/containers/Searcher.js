@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { setLimits, setQuery } from '../../actions';
 
+import Img from 'react-cool-img';
+
 import OrderBy from '../components/orderBy/OrderBy';
 
 import InputPredict from 'react-inline-predict';
@@ -150,11 +152,13 @@ const Searcher = (props) => {
             className="text-white grid justify-items-center text-center"
           >
             I didn't found anything
-            <img
+            <Img
+              cache={true}
+              lazy={true}
               alt="not found :("
               class="w-64 margin-auto center"
               src="https://64.media.tumblr.com/10a840955b9b408d8a5698a394a23705/tumblr_inline_p568x3I4pl1r4iznv_500.gifv"
-            ></img>
+            />
           </div>
         </div>
       ) : null}
