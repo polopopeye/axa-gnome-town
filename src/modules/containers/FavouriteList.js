@@ -7,11 +7,6 @@ import TemplateCard from '../components/TemplateCard';
 
 const FavouriteList = (props) => {
   const { myList, Brastlewark } = props;
-  console.log('myList');
-  console.log(myList);
-  //   const handleDeleteFavourite = (id) => {
-  //     props.deleteFavourite(id);
-  //   };
 
   return (
     <div>

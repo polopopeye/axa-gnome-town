@@ -1,21 +1,19 @@
 import React from 'react';
+
 import axios from 'axios';
 
-const RetrieveData = () => {
-  //   const getData = () => {
-  axios
-    .get(
-      'https://raw.githubusercontent.com/rrafols/mobile_test/master/data.json'
-    )
-    .then(function (response) {
-      console.log(response);
+let urlAPI =
+  'https://raw.githubusercontent.com/rrafols/mobile_test/master/data.json';
+let city = 'Brastlewark';
 
-      return response;
+export default async function retrieveData(callback) {
+  axios
+    .get(urlAPI)
+    .then(function (response) {
+      callback(response.data[city]);
     })
     .catch(function (error) {
       console.log(error);
       return 'error';
     });
-};
-
-export default RetrieveData;
+}

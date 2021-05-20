@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { setLimits, setQuery } from '../../actions';
+import { setLimits, setQuery, setData } from '../../actions';
 
 import Img from 'react-cool-img';
 
 import OrderBy from '../components/orderBy/OrderBy';
 
 import InputPredict from 'react-inline-predict';
-
+import retrieveData from '../components/retrieveData';
 import {
   generatePredict,
   predictArrayDict,
@@ -21,6 +21,10 @@ let idInputSearch = 'inputSearchResults';
 const Searcher = (props) => {
   const { Brastlewark, myList, resultsPerPage, query } = props;
   let count = 0;
+
+  const handleSetData = (data) => {
+    props.setData(data);
+  };
 
   const handleSetLimits = (value) => {
     actualPage = 1;
@@ -46,7 +50,13 @@ const Searcher = (props) => {
     );
   };
 
-  generatePredict(Brastlewark);
+  if (Brastlewark && Brastlewark.length > 0) {
+    generatePredict(Brastlewark);
+  } else {
+    retrieveData(function (response) {
+      handleSetData(response);
+    });
+  }
 
   return (
     <>
@@ -81,11 +91,9 @@ const Searcher = (props) => {
           <option value="999999999">All</option>
         </select>
       </div>
-      {/* <div>{Brastlewark.length}</div> */}
       <br></br>
       <div></div>
       <div>
-        {/* <h1>LISTA</h1> */}
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 transition ease-out duration-700">
           {Brastlewark.slice(startIndex).map((gnome, i) => {
             if (count <= resultsPerPage) {
@@ -191,7 +199,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
   setLimits,
   setQuery,
+  setData,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Searcher);
-// export default connect(mapStateToProps, null)(Searcher);

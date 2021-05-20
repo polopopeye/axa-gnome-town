@@ -4,8 +4,7 @@ import { Fragment } from 'react';
 
 export default function PopOverCard(props) {
   let arrayButton = props.arrayButton;
-  console.log('arrayButton');
-  console.log(arrayButton);
+
   return (
     <div className="w-full bg-gray-900 text-center rounded-md">
       <Popover className="relative">
@@ -36,7 +35,6 @@ export default function PopOverCard(props) {
                 <div className=" w-full overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                   <div className="relative grid gap-2 bg-white p-1 lg:grid-cols-1">
                     {arrayButton.map(function (item, i) {
-                      console.log('test');
                       return <span key={i}>{item}</span>;
                     })}
                   </div>
