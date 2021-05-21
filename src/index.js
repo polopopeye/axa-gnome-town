@@ -11,12 +11,8 @@ import reducer from './reducers';
 
 import MainSPA from './modules/containers/MainSPA';
 
-const initialState = {
-  myList: [],
-  resultsPerPage: 5,
-  query: ' ',
-  Brastlewark: [],
-};
+import initialState from './initialState';
+
 const store = createStore(reducer, initialState);
 
 ReactDOM.render(

@@ -22,3 +22,13 @@ export const setData = (payload) => ({
   type: 'SET_DATA',
   payload,
 });
+
+const actions = {
+  setFavourite,
+  deleteFavourite,
+  setLimits,
+  setQuery,
+  setData,
+};
+
+export default actions;

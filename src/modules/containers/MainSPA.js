@@ -23,7 +23,9 @@ export default function MainSPA() {
     <div className="w-full   py-2 bg-gray-900 transition transition-all duration-500 ease-in-out transform">
       <div className="w-full max-w-md mx-auto">
         <RadioGroup value={selected} onChange={setSelected}>
-          <RadioGroup.Label className="sr-only">Server size</RadioGroup.Label>
+          <RadioGroup.Label className="gnomeFace sr-only">
+            Face Gnome
+          </RadioGroup.Label>
           <div className="space-y-2">
             {menuProps.map((plan) => (
               <RadioGroup.Option

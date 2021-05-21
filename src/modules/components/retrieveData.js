@@ -11,6 +11,7 @@ export default async function retrieveData(callback) {
     .get(urlAPI)
     .then(function (response) {
       callback(response.data[city]);
+      return response.data[city].length;
     })
     .catch(function (error) {
       console.log(error);
