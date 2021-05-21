@@ -25,7 +25,8 @@ Mobile friendly
 Included unitTesting to check the api conection, the reducers and the actions.
 </p>
 <h3>Directories</h3>
-<code>
+ 
+```
 src (main dir) 
 |_ __mocks__ (mocks dir to use with test)
 |_ __test__ (test dir)
@@ -35,4 +36,4 @@ src (main dir)
 |_ modules (main dir of code written)
      |_ components (features dir of the app, small scripts or parts of containers)
      |_ containers (components of the app)
-</code>
+```
