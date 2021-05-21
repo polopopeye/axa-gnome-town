@@ -1,7 +1,7 @@
 <h1>Gnome Town</h1>
 Live Demo! <a href="https://axagnometown.netlify.app/">https://axagnometown.netlify.app/</a>
-<p>Un un buscador rápido de la ciudad Brastlewark, utilizando tecnologias como, redux, axios y tailwind</p>
-<p>I would make more but, for a first MVP its enough.</p>
+<p>A quick search engine of the city Brastlewark, using technologies like, redux, axios and tailwind</p>
+<p>Its just and MVP but I would love to be able to do more things, like cache state of data.</p>
 <h4>Features</4>
 <ul>
 <li>
@@ -17,12 +17,12 @@ Mobile friendly
 </li>
 </ul>
 <h2>Installation</h2>
-<p>como cualquier otro repositorio, </p>
-<code> npm install </code> and <code> npm run start </code>
+<p>Like any other repo <code> npm install </code>  and  <code> npm run start </code></p>
+
 <h3>Testing</h3>
 <p><code>npm run test </code>
 <br>
-Included unitTesting to check the api conection, the reducers and the actions.
+I made some basics unitTesting to check the api conection, the reducers and the actions.
 </p>
 <h3>Directories</h3>
  
