@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { RadioGroup } from '@headlessui/react';
-import Searcher from './Searcher';
 import FavouriteList from './FavouriteList';
+import Searcher from './Searcher';
 
 const menuProps = [
   {
@@ -81,7 +81,8 @@ export default function MainSPA() {
           </div>
         </RadioGroup>
       </div>
-      {selected.id == 1 ? <Searcher /> : <FavouriteList />}
+      {selected.id === 1 ? <Searcher /> : null}
+      {selected.id === 2 ? <FavouriteList /> : null}
     </div>
   );
 }

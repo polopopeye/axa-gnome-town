@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { deleteFavourite } from '../../actions';
 import Img from 'react-cool-img';
 
 import TemplateCard from '../components/TemplateCard';
@@ -17,18 +16,20 @@ const FavouriteList = (props) => {
         {myList.length > 0 ? (
           myList.map((favourite, i) => {
             if (favourite.id !== undefined) {
+              let arrayID = Brastlewark.find((obj) => {
+                return obj.id === favourite.id;
+              });
+
               return (
-                <div key={i + 'FavList'}>
-                  {favourite.id > -1 ? (
-                    <>
-                      <TemplateCard
-                        gnome={Brastlewark[favourite.id]}
-                        gnomeProfessions={false}
-                        gnomeFriends={false}
-                        favs={myList}
-                      ></TemplateCard>
-                    </>
-                  ) : null}
+                <div key={i}>
+                  <>
+                    <TemplateCard
+                      gnome={arrayID}
+                      gnomeProfessions={false}
+                      gnomeFriends={false}
+                      favs={myList}
+                    ></TemplateCard>
+                  </>
                 </div>
               );
             }
@@ -55,8 +56,5 @@ const mapStateToProps = (state) => {
     myList: state.myList,
   };
 };
-const mapDispatchToProps = {
-  deleteFavourite,
-};
 
-export default connect(mapStateToProps, mapDispatchToProps)(FavouriteList);
+export default connect(mapStateToProps, null)(FavouriteList);
