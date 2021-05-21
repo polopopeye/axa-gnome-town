@@ -17,7 +17,7 @@ Mobile friendly
 </li>
 </ul>
 <h2>Installation</h2>
-<p>Like any other repo <code> npm install </code>  and  <code> npm run start </code></p>
+<p>Like any other repo <code> npm install </code>  and  <code> npm run start </code> to start the development envoriment in localhost:3000</p>
 
 <h3>Testing</h3>
 <p><code>npm run test </code>
