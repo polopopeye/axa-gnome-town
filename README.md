@@ -1,7 +1,7 @@
 <h1>Gnome Town</h1>
 Live Demo! <a href="https://axagnometown.netlify.app/">https://axagnometown.netlify.app/</a>
 <p>A quick search engine of the city Brastlewark, using technologies like, redux, axios and tailwind</p>
-<p>Its just and MVP but I would love to be able to do more things, like cache state of data.</p>
+<p>Its just a MVP but I would love to be able to do more things, like cache state of data.</p>
 <h4>Features</4>
 <ul>
 <li>
